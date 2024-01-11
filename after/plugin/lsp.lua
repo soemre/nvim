@@ -1,19 +1,27 @@
 local lsp_zero = require("lsp-zero")
 local cfg = require("lspconfig")
 
+-- Inlay Hints
+local ih = require('lsp-inlayhints')
+ih.setup()
+
 -- Lang Conf
-cfg.rust_analyzer.setup({})
-cfg.dartls.setup({})
-cfg.clangd.setup({})
-cfg.lua_ls.setup(lsp_zero.nvim_lua_ls())
+-- Don't add "dartls", flutter-tools'll set it.
+cfg.lua_ls.setup(lsp_zero.nvim_lua_ls()) -- Keep the lua setup here to set it up using nvim config.
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
-        "dockerls",
-        "marksman",
+        "rust_analyzer",
+        "gopls",
+        "clangd",
+        "emmet_ls",
+        "biome",
+        "bashls",
         "sqlls",
         "taplo",
+        "dockerls",
+        "marksman",
     },
     handlers = {
         lsp_zero.default_setup,
@@ -37,6 +45,7 @@ require('luasnip.loaders.from_vscode').lazy_load()
 cmp.setup({
     sources = {
         { name = 'path' },
+        { name = 'buffer' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
     },
@@ -52,8 +61,11 @@ cmp.setup({
 })
 
 -- Mappings
-lsp_zero.on_attach(function(_, bufnr)
+lsp_zero.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
+
+    -- Inlay Hints
+    ih.on_attach(client, bufnr)
 
     -- Formatting
     vim.keymap.set({ 'n', 'x' }, 'gq', function()
