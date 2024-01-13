@@ -79,6 +79,9 @@ return require('packer').startup(
             requires = {
                 'nvim-lua/plenary.nvim',
                 'stevearc/dressing.nvim', -- optional for vim.ui.select
+
+                -- Debuging
+                "rcarriga/nvim-dap-ui",
             },
         }
 
@@ -89,12 +92,20 @@ return require('packer').startup(
             },
         }
 
-        -- Debug
+        -- Debuging
         use("mfussenegger/nvim-dap")
 
         use {
             "theHamsta/nvim-dap-virtual-text",
-            requires = { "mfussenegger/nvim-dap", "nvim-treesitter/nvim-treesitter" }
+            requires = {
+                "mfussenegger/nvim-dap",
+                "nvim-treesitter/nvim-treesitter",
+            }
+        }
+
+        use {
+            "rcarriga/nvim-dap-ui",
+            requires = { "mfussenegger/nvim-dap" }
         }
     end
 )

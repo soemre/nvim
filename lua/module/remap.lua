@@ -8,12 +8,11 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzz")
 vim.keymap.set("n", "N", "Nzz")
 
--- Util
-vim.keymap.set("x", "<leader>p", "\"_dp")
-vim.keymap.set({ "n", "v" }, "<leader>d", "\"_d")
+-- Buffer: Without Buffer
+vim.keymap.set("x", "<leader>p", [["_dp]]) -- Paste
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]]) -- Delete
+vim.keymap.set({ "n", "v" }, "<leader>D", [["_D]]) -- Delete
 
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
-
--- Terminal
-vim.keymap.set({ "n", "v" }, "<C-\">", function() vim.cmd("! $TERM") end)
+-- Buffer: With Buffer
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]]) -- Yank
+vim.keymap.set({ "n", "v" }, "<leader>Y", [["+Y]]) -- Yank
