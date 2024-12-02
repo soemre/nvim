@@ -1,3 +1,6 @@
+vim.cmd.colorscheme ("rose-pine-main")
+vim.lsp.inlay_hint.enable()
+
 vim.opt.guicursor = ""
 
 vim.opt.nu = true

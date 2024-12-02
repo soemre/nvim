@@ -8,17 +8,13 @@ return{
         cfg.rust_analyzer.setup {}
         cfg.pyright.setup {}
         cfg.lua_ls.setup {}
+        cfg.taplo.setup {}
     end,
     dependencies = {
         {
             "williamboman/mason-lspconfig.nvim",
             dependencies = {
-                {
-                    "williamboman/mason.nvim",
-                    opts = {
-                        max_concurrent_installers = 10,
-                    },
-                },
+                require("plugins.lsp.mason"),
             },
             opts = {
                 automatic_installation = true,
