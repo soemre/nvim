@@ -27,16 +27,38 @@ return {
                 },
 
                 {
-                    "neovim/nvim-lspconfig",
+                    "zbirenbaum/copilot-cmp",
+                    dependencies = {
+                        {
+                            "zbirenbaum/copilot.lua",
+                            opts = {
+                                panel = {
+                                    enabled = false,
+                                },
+                                suggestions = {
+                                    enabled = false,
+                                }
+                            },
+                        },
+                    },
+                    opts = {},
+                },
+
+                {
+                    require("plugins.lsp.cfg"),
                     "saadparwaiz1/cmp_luasnip",
                     "hrsh7th/cmp-nvim-lua",
                     "hrsh7th/cmp-nvim-lsp",
                     "hrsh7th/cmp-buffer",
                     "hrsh7th/cmp-path",
+
+                    -- Appearance
+                    "onsails/lspkind.nvim",
                 },
             },
             opts = function()
                 local cmp = require("cmp")
+                vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg ="#6338A8"})
                 return {
                     snippet = {
                         -- REQUIRED - you must specify a snippet engine
@@ -51,14 +73,23 @@ return {
                         ['<C-f>'] = cmp.mapping.scroll_docs(4),
                         ['<C-Space>'] = cmp.mapping.complete(),
                         ['<C-e>'] = cmp.mapping.abort(),
-                        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                        ['<Tab>'] = cmp.mapping.confirm({ select = true }),
                     }),
                     sources = cmp.config.sources({
+                        { name = "copilot" },
                         { name = 'nvim_lsp' },
                         { name = 'luasnip' },
                         { name = 'buffer' },
                         { name = 'path' },
                     }),
+                    formatting = {
+                        format = require("lspkind").cmp_format({
+                        -- mode = "symbol",
+                        symbol_map = {
+                            Copilot = "",
+                        },
+                    }),
+                    },
                     experimental = {
                         ghost_text = true,
                     },

@@ -27,6 +27,10 @@ maps({
     {"n", "<C-S-k>", "<C-w>K"},
     {"n", "<C-S-l>", "<C-w>L"},
 
+    -- Switch Buffers
+    {"n", "<Tab>", "gt"},
+    {"n", "<S-Tab>", "gT"},
+
     -- Toogle Explorers
     {"n", "<C-S-e>", function()
         local tree = require("nvim-tree.api").tree
@@ -37,6 +41,7 @@ maps({
         end
     end},
     { "n", "<leader>f", ":Telescope find_files<CR>" },
+    { "n", "<leader>T", ":TodoTelescope<CR>" },
 
     -- Snippet
     {{"i"}, "<C-K>", function() ls.expand() end, {silent = true}},
@@ -49,5 +54,11 @@ maps({
     end, {silent = true}},
 
     -- Comment
-    {{"n", "v", "i"}, "<C-/>", require("Comment.api").toggle.linewise.current, { remap = true, silent = true }},
+    {"v", "<C-/>", "gc", { remap = true, silent = true }},
+    {{ "n", "i" }, "<C-/>", require('Comment.api').toggle.linewise.current, { remap = true, silent = true }},
+
+    -- Inlay hints
+    {{ "n", "v" }, "<leader>L", function()
+        vim.lsp.inlay_hint.enable(vim.lsp.inlay_hint.is_enabled())
+    end, { silent = true }},
 })
