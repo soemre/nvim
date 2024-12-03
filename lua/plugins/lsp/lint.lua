@@ -1,9 +1,9 @@
-local lint = {
+return {
 	"mfussenegger/nvim-lint",
 	config = function()
 		local l = require("lint")
 		l.linters_by_ft = {
-			rust = { "cargo" },
+			rust = { "clippy" },
 			python = { "flake8" },
 			lua = { "selene" },
 			sh = { "shellcheck" },
@@ -20,15 +20,4 @@ local lint = {
 			end,
 		})
 	end,
-}
-
-return {
-	{
-		"rshkarin/mason-nvim-lint",
-		dependencies = {
-			require("plugins.lsp.mason"),
-			lint,
-		},
-		opts = {},
-	},
 }

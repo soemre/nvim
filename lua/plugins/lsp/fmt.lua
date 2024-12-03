@@ -1,5 +1,16 @@
-local conform = {
+return {
 	"stevearc/conform.nvim",
+	event = { "BufWritePre" },
+	keys = {
+		{
+			"<leader>p",
+			function()
+				require("conform").format({ async = true })
+			end,
+			mode = "",
+			desc = "Format buffer",
+		},
+	},
 	cmd = { "ConformInfo" },
 	opts = {
 		formatters_by_ft = {
@@ -11,27 +22,5 @@ local conform = {
 			timeout_ms = 500,
 			lsp_format = "fallback",
 		},
-	},
-}
-
-return {
-	{
-		"zapling/mason-conform.nvim",
-		event = { "BufWritePre" },
-		keys = {
-			{
-				"<leader>p",
-				function()
-					require("conform").format({ async = true })
-				end,
-				mode = "",
-				desc = "Format buffer",
-			},
-		},
-		dependencies = {
-			require("plugins.lsp.mason"),
-			conform,
-		},
-		opts = {},
 	},
 }

@@ -5,8 +5,23 @@ return {
 		opts = {},
 		dependencies = {
 			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
+			{
+				"rcarriga/nvim-notify",
+				keys = {
+					{ "<leader>nn", ":Telescope notify<CR>" },
+					{
+						"<leader>nd",
+						function()
+							require("notify").dismiss({ pending = true, silent = true })
+						end,
+					},
+				},
+			},
 		},
+	},
+	{
+		"stevearc/dressing.nvim",
+		opts = {},
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
@@ -17,14 +32,15 @@ return {
 		},
 		keys = {
 			{
-				"n",
 				"<leader>e",
 				function()
 					local tree = require("nvim-tree.api").tree
+					local dap = require("dapui")
 					if tree.is_tree_buf() then
 						tree.close()
 					else
 						tree.focus()
+						dap.close()
 					end
 				end,
 			},
@@ -60,6 +76,26 @@ return {
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {},
+	},
+	{
+		"rcarriga/nvim-dap-ui",
+		keys = {
+			{
+				"<leader>dt",
+				function()
+					require("nvim-tree.api").tree.close()
+					require("dapui").toggle({
+						reset = true,
+					})
+				end,
+				"Toggle DAP UI",
+			},
+		},
+		dependencies = {
+			require("plugins.lsp.dap"),
+			"nvim-neotest/nvim-nio",
+		},
 		opts = {},
 	},
 	require("plugins.ui.themes"),
