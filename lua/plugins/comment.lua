@@ -2,9 +2,9 @@ return {
 	"numToStr/Comment.nvim",
 	event = "VeryLazy",
 	keys = {
-		{ "<C-_>", "gc", mode = "v", remap = true, silent = true },
+		{ (os.getenv("TMUX") and "<C-_>" or "<C-/>"), "gc", mode = "v", remap = true, silent = true },
 		{
-			"<C-_>",
+			(os.getenv("TMUX") and "<C-_>" or "<C-/>"),
 			function()
 				require("Comment.api").toggle.linewise.current()
 			end,
