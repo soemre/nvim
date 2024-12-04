@@ -1,4 +1,8 @@
 return {
+	require("plugins.ui.themes"),
+	require("plugins.ui.oil"),
+	require("plugins.ui.bufferline"),
+	require("plugins.ui.trouble"),
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -22,30 +26,6 @@ return {
 	{
 		"stevearc/dressing.nvim",
 		event = "VeryLazy",
-		opts = {},
-	},
-	{
-		"nvim-tree/nvim-tree.lua",
-		version = "*",
-		lazy = false,
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		keys = {
-			{
-				"<leader>e",
-				function()
-					local tree = require("nvim-tree.api").tree
-					local dap = require("dapui")
-					if tree.is_tree_buf() then
-						tree.close()
-					else
-						tree.focus()
-						dap.close()
-					end
-				end,
-			},
-		},
 		opts = {},
 	},
 	{
@@ -86,10 +66,7 @@ return {
 			{
 				"<leader>dt",
 				function()
-					require("nvim-tree.api").tree.close()
-					require("dapui").toggle({
-						reset = true,
-					})
+					require("dapui").toggle({ reset = true })
 				end,
 				"Toggle DAP UI",
 			},
@@ -100,9 +77,6 @@ return {
 		},
 		opts = {},
 	},
-	require("plugins.ui.themes"),
-	require("plugins.ui.bufferline"),
-	require("plugins.ui.trouble"),
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "BufEnter",
