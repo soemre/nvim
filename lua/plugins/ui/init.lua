@@ -21,6 +21,7 @@ return {
 	},
 	{
 		"stevearc/dressing.nvim",
+		event = "VeryLazy",
 		opts = {},
 	},
 	{
@@ -49,16 +50,15 @@ return {
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
+		event = "BufRead",
 		main = "ibl",
-		---@module "ibl"
-		---@type ibl.config
 		opts = {
 			indent = { char = "▏" },
 		},
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-		event = "BufEnter",
+		event = "BufRead",
 		dependencies = {
 			require("plugins.treesitter"),
 		},
@@ -66,20 +66,22 @@ return {
 	},
 	{
 		"theHamsta/nvim-dap-virtual-text",
-		event = "BufEnter",
-		dependencies = {
-			require("plugins.treesitter"),
-			require("plugins.lsp.dap"),
-		},
+		event = "BufRead",
+		dependencies = { require("plugins.treesitter"), require("plugins.lsp.dap") },
 		opts = {},
 	},
 	{
 		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-lua/plenary.nvim", require("plugins.telescope") },
+		event = "VeryLazy",
+		keys = {
+			{ "<leader>t", ":TodoTelescope<CR>" },
+		},
 		opts = {},
 	},
 	{
 		"rcarriga/nvim-dap-ui",
+		event = "VeryLazy",
 		keys = {
 			{
 				"<leader>dt",
@@ -99,7 +101,28 @@ return {
 		opts = {},
 	},
 	require("plugins.ui.themes"),
-	require("plugins.ui.lualine"),
 	require("plugins.ui.bufferline"),
 	require("plugins.ui.trouble"),
+	{
+		"nvim-lualine/lualine.nvim",
+		event = "BufEnter",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("plugins.ui.lualine")
+		end,
+	},
+	{
+		"catgoose/nvim-colorizer.lua",
+		event = "BufRead",
+		opts = {},
+	},
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		ft = "markdown",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"echasnovski/mini.icons",
+		},
+		opts = {},
+	},
 }
