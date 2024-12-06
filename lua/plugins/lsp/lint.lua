@@ -3,7 +3,6 @@ return {
 	config = function()
 		local l = require("lint")
 		l.linters_by_ft = {
-			rust = { "clippy" },
 			python = { "flake8" },
 			lua = { "selene" },
 			sh = { "shellcheck" },
