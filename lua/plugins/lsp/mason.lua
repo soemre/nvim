@@ -1,12 +1,20 @@
 return {
 	{
 		"williamboman/mason.nvim",
+		event = "VeryLazy",
 		opts = {
 			max_concurrent_installers = 10,
 		},
 	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		cmd = {
+			"MasonToolsClean",
+			"MasonToolsUpdate",
+			"MasonToolsUpdateSync",
+			"MasonToolsInstall",
+			"MasonToolsInstallSync",
+		},
 		dependencies = {
 			"williamboman/mason.nvim",
 		},
