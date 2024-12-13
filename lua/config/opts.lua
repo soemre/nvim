@@ -9,7 +9,7 @@ g.loaded_netrwPlugin = 1
 
 -- Appearance
 opt.termguicolors = true
-cmd.colorscheme("alduin")
+cmd.colorscheme("ayu")
 opt.fillchars = { eob = " " }
 lsp.inlay_hint.enable()
 opt.colorcolumn = "100"
