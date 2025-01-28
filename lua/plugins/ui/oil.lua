@@ -11,6 +11,7 @@ return {
 			show_hidden = true,
 		},
 		keymaps = {
+			["<Esc>"] = { "actions.close", mode = "n" },
 			["<Tab>"] = "actions.select",
 		},
 	},
