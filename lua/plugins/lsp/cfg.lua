@@ -8,5 +8,6 @@ return {
 		cfg.pyright.setup({})
 		cfg.lua_ls.setup({})
 		cfg.taplo.setup({})
+		cfg.nushell.setup({})
 	end,
 }

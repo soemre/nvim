@@ -35,6 +35,8 @@ map_keys({
 	{ "v", "K", ":m '<-2<CR>gv=gv" },
 	{ "v", "<", "<gv" },
 	{ "v", ">", ">gv" },
+    { "v", "<Tab>", ">gv" },
+    { "v", "<S-Tab>", "<gv" },
 
 	-- Panes
 	{ "n", "<C-h>", function() move_window("h") end },
