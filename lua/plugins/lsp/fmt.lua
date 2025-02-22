@@ -17,6 +17,7 @@ return {
 			lua = { "stylua" },
 			python = { "isort", "black" },
 			rust = { "rustfmt", lsp_format = "fallback" },
+			nix = { "alejandra" },
 		},
 		format_on_save = {
 			timeout_ms = 500,

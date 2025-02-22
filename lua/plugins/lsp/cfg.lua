@@ -9,5 +9,6 @@ return {
 		cfg.lua_ls.setup({})
 		cfg.taplo.setup({})
 		cfg.nushell.setup({})
+		cfg.nil_ls.setup({})
 	end,
 }

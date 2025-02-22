@@ -21,29 +21,31 @@ return {
 		opts = {
 			ensure_installed = {
 				-- LSP
-				"rust-analyzer",
-				"pyright",
-				"lua-language-server",
-				"taplo",
+				"rust-analyzer", -- Rust
+				"pyright", -- Python
+				"lua-language-server", -- Lua
+				"taplo", -- Toml
+				"nil", -- Nix
 
 				-- Formatters
-				"stylua",
-				"isort",
-				"black",
+				"stylua", -- Lua
+				"isort", -- Python
+				"black", -- Python
+				"alejandra", -- Nix
 
 				-- Linters
-				"flake8",
-				"selene",
-				"shellcheck",
-				"markdownlint",
-				"yamllint",
-				"jsonlint",
-				"hadolint",
-				"golangci-lint",
+				"flake8", -- Python
+				"selene", -- Lua
+				"shellcheck", -- Bash
+				"markdownlint", -- Markdown
+				"yamllint", -- Yaml
+				"jsonlint", -- Json
+				"hadolint", -- Docker
+				"golangci-lint", -- Go
 
 				-- Debuggers
 				"codelldb",
-				"debugpy",
+				"debugpy", -- Python
 			},
 		},
 	},
