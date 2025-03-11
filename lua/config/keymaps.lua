@@ -38,6 +38,10 @@ map_keys({
     { "v", "<Tab>", ">gv" },
     { "v", "<S-Tab>", "<gv" },
 
+    -- 
+    { "n", "<M-j>", "jzz" },
+    { "n", "<M-k>", "kzz" },
+
 	-- Panes
 	{ "n", "<C-h>", function() move_window("h") end },
 	{ "n", "<C-j>", function() move_window("j") end },

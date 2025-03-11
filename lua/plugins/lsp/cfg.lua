@@ -10,5 +10,6 @@ return {
 		cfg.taplo.setup({})
 		cfg.nushell.setup({})
 		cfg.nil_ls.setup({})
+		cfg.emmet_ls.setup({})
 	end,
 }

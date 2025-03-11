@@ -26,12 +26,14 @@ return {
 				"lua-language-server", -- Lua
 				"taplo", -- Toml
 				"nil", -- Nix
+				"emmet-ls", -- HTML
 
 				-- Formatters
 				"stylua", -- Lua
 				"isort", -- Python
 				"black", -- Python
 				"alejandra", -- Nix
+				"prettier", -- HTML
 
 				-- Linters
 				"flake8", -- Python
