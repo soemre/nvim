@@ -5,8 +5,8 @@ return {
 		local cfg = require("lspconfig")
 
 		local rust_config = {}
-		local success, result = pcall(require("common").exec, "toml get -r .cargo/config.toml build.target 2>/dev/null")
-		if success then
+		local success, result, _ = require("common").exec("toml get -r .cargo/config.toml build.target")
+		if success == 0 then
 			rust_config.cargo = { target = result }
 			rust_config.check = { allTargets = false }
 		end
