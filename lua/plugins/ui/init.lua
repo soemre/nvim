@@ -30,7 +30,7 @@ return {
 	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		event = "BufRead",
+		event = "BufReadPost",
 		main = "ibl",
 		opts = {
 			indent = { char = "▏" },
@@ -38,7 +38,7 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
-		event = "BufRead",
+		event = "BufReadPost",
 		dependencies = {
 			require("plugins.treesitter"),
 		},
@@ -46,14 +46,14 @@ return {
 	},
 	{
 		"theHamsta/nvim-dap-virtual-text",
-		event = "BufRead",
+		event = "BufReadPost",
 		dependencies = { require("plugins.treesitter"), require("plugins.lsp.dap") },
 		opts = {},
 	},
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", require("plugins.telescope") },
-		event = "VeryLazy",
+		-- event = "BufReadPost", -- Takes too much time
 		keys = {
 			{ "<leader>t", ":TodoTelescope<CR>" },
 		},
@@ -61,7 +61,6 @@ return {
 	},
 	{
 		"rcarriga/nvim-dap-ui",
-		event = "VeryLazy",
 		keys = {
 			{
 				"<leader>dt",
@@ -79,7 +78,7 @@ return {
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		event = "BufEnter",
+		event = "VeryLazy",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			require("plugins.ui.lualine")
@@ -87,7 +86,7 @@ return {
 	},
 	{
 		"catgoose/nvim-colorizer.lua",
-		event = "BufRead",
+		event = "BufReadPost",
 		opts = {},
 	},
 	{

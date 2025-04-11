@@ -1,6 +1,5 @@
 return {
 	"mfussenegger/nvim-dap",
-	event = "VeryLazy",
 	keys = {
 		{
 			"<leader>dm",

@@ -3,7 +3,6 @@ return {
 	dependencies = {
 		"tpope/vim-repeat",
 	},
-	event = "VeryLazy",
 	keys = {
 		{ "S", mode = { "v" } },
 		"cs",

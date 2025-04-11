@@ -1,6 +1,6 @@
 return {
-	{ "Shatur/neovim-ayu", event = "VeryLazy" },
-	{ "luisiacc/gruvbox-baby", event = "VeryLazy" },
-	{ "Abstract-IDE/Abstract-cs", event = "VeryLazy" },
-	{ "catppuccin/nvim", event = "VeryLazy" },
+	{ "Shatur/neovim-ayu" },
+	{ "luisiacc/gruvbox-baby" },
+	{ "Abstract-IDE/Abstract-cs" },
+	{ "catppuccin/nvim" },
 }

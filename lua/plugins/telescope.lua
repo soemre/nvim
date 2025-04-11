@@ -1,10 +1,8 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.8",
-	event = "VeryLazy",
 	keys = {
 		{ "<leader>f", "<cmd>Telescope find_files<cr>" },
-		{ "<leader>l", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>" },
 	},
 	cmd = "Telescope",
 	dependencies = {

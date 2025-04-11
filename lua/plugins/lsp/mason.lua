@@ -27,6 +27,7 @@ return {
 				"taplo", -- Toml
 				"nil", -- Nix
 				"emmet-ls", -- HTML
+				"clangd", -- C, C++
 
 				-- Formatters
 				"stylua", -- Lua
@@ -34,6 +35,7 @@ return {
 				"black", -- Python
 				"alejandra", -- Nix
 				"prettier", -- HTML
+				"clang-format", -- C, C++
 
 				-- Linters
 				"flake8", -- Python
@@ -44,6 +46,7 @@ return {
 				"jsonlint", -- Json
 				"hadolint", -- Docker
 				"golangci-lint", -- Go
+				"cpplint", -- C, C++
 
 				-- Debuggers
 				"codelldb",

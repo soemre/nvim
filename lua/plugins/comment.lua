@@ -1,6 +1,5 @@
 return {
 	"numToStr/Comment.nvim",
-	event = "VeryLazy",
 	keys = {
 		{ (os.getenv("TMUX") and "<C-_>" or "<C-/>"), "gc", mode = "v", remap = true, silent = true },
 		{

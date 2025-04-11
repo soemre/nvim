@@ -1,6 +1,9 @@
 return {
 	"neovim/nvim-lspconfig",
-	event = "User FilePost",
+	event = "VeryLazy",
+	keys = {
+		{ "<leader>l", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>" },
+	},
 	config = function()
 		local cfg = require("lspconfig")
 
@@ -20,5 +23,6 @@ return {
 		cfg.nushell.setup({})
 		cfg.nil_ls.setup({})
 		cfg.emmet_ls.setup({})
+		cfg.clangd.setup({})
 	end,
 }

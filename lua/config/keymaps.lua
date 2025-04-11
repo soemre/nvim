@@ -56,8 +56,9 @@ map_keys({
 	{ "n", "<Tab>", "gt" },
 	{ "n", "<S-Tab>", "gT" },
 
-	-- Go to definition
+	-- Symbol Operations
 	{ "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>" },
+	{ "n", "grn", "<cmd>lua vim.lsp.buf.rename()<CR>" },
 
 	-- Inlay hints
 	{
