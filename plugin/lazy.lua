@@ -27,4 +27,9 @@ require("lazy").setup({
 	install = { colorscheme = { vim.g.colors_name } },
 	checker = { enabled = true },
 	defaults = { lazy = true },
+	dev = {
+		path = "~/repos/nvim/",
+		patterns = { "soemre" },
+		fallback = true,
+	},
 })
