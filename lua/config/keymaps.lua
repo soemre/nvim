@@ -69,4 +69,7 @@ map_keys({
 		end,
 		{ silent = true },
 	},
+
+    -- Toggle Comments
+	{ "n", "<leader>/", require("fold_comments").toggle},
 })

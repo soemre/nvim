@@ -24,5 +24,6 @@ return {
 		cfg.nil_ls.setup({})
 		cfg.emmet_ls.setup({})
 		cfg.clangd.setup({})
+		cfg.dartls.setup({})
 	end,
 }

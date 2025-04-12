@@ -28,6 +28,7 @@ return {
 				"nil", -- Nix
 				"emmet-ls", -- HTML
 				"clangd", -- C, C++
+				"dcm", -- Dart
 
 				-- Formatters
 				"stylua", -- Lua
@@ -51,6 +52,7 @@ return {
 				-- Debuggers
 				"codelldb",
 				"debugpy", -- Python
+				"dart-debug-adapter", -- Dart
 			},
 		},
 	},
