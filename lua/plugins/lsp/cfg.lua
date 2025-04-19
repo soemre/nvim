@@ -23,7 +23,12 @@ return {
 		cfg.nushell.setup({})
 		cfg.nil_ls.setup({})
 		cfg.emmet_ls.setup({})
-		cfg.clangd.setup({})
+		cfg.clangd.setup({
+			cmd = {
+				"clangd",
+				"--query-driver=/run/current-system/sw/bin/*gcc*",
+			},
+		})
 		cfg.dartls.setup({})
 	end,
 }

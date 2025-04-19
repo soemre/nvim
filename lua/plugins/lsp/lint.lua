@@ -12,6 +12,8 @@ return {
 			json = { "jsonlint" },
 			dockerfile = { "hadolint" },
 			go = { "golangci-lint" },
+			c = { "cpplint" },
+			cpp = { "cpplint" },
 		}
 
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {

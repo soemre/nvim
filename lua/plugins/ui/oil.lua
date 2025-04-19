@@ -1,3 +1,7 @@
+local function is_last_buf()
+	return not pcall(vim.cmd.bprev)
+end
+
 return {
 	"stevearc/oil.nvim",
 	dependencies = { "echasnovski/mini.icons" },
@@ -6,7 +10,7 @@ return {
 		{
 			"<leader>o",
 			function()
-				if not pcall(vim.cmd.bprev) then
+				if is_last_buf() then
 					return
 				end
 				require("oil").toggle_float()
@@ -22,20 +26,20 @@ return {
 		keymaps = {
 			["<Esc>"] = {
 				callback = function()
-					if not pcall(vim.cmd.bprev) then
+					if is_last_buf() then
 						return
 					end
 					local actions = require("oil.actions")
-					actions.close.callback({
-						exit_if_last_buf = true,
-					})
+					actions.close.callback({})
 				end,
 				mode = "n",
 			},
-			["<C-c>"] = function()
-				require("oil.config").keymaps["<Esc>"].callback()
-			end,
-			mode = "n",
+			["<C-c>"] = {
+				callback = function()
+					require("oil.config").keymaps["<Esc>"].callback()
+				end,
+				mode = "n",
+			},
 			["<Tab>"] = "actions.select",
 		},
 	},

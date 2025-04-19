@@ -18,6 +18,8 @@ return {
 			python = { "isort", "black" },
 			rust = { "rustfmt", lsp_format = "fallback" },
 			nix = { "alejandra" },
+			c = { "clang-format" },
+			cpp = { "clang-format" },
 		},
 		format_on_save = {
 			timeout_ms = 500,
