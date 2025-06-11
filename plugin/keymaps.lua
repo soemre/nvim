@@ -38,6 +38,7 @@ set("n", "<M-j>", "jzz")
 set("n", "<M-k>", "kzz")
 
 -- Panes
+set("n", "<C-w>q", "<cmd>hide<CR>") -- Require `:q` to close nvim
 set("n", "<C-h>", function()
 	move_window("h")
 end)

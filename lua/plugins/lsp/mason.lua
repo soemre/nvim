@@ -29,6 +29,7 @@ return {
 				"emmet-ls", -- HTML
 				"clangd", -- C, C++
 				"dcm", -- Dart
+				"typescript-language-server", -- JS, TS
 
 				-- Formatters
 				"stylua", -- Lua

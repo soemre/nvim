@@ -19,6 +19,7 @@ return {
 				"json",
 				"yaml",
 				"dart",
+				"typescript",
 			},
 			sync_install = false,
 			highlight = { enable = true },

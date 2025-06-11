@@ -30,5 +30,6 @@ return {
 			},
 		})
 		cfg.dartls.setup({})
+		cfg.ts_ls.setup({})
 	end,
 }
