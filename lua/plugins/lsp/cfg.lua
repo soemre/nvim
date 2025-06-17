@@ -3,6 +3,7 @@ return {
 	event = "VeryLazy",
 	keys = {
 		{ "<leader>l", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>" },
+		{ "<leader>ca", vim.lsp.buf.code_action },
 	},
 	config = function()
 		local cfg = require("lspconfig")
