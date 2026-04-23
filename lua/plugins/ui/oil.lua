@@ -9,12 +9,7 @@ return {
 	keys = {
 		{
 			"<leader>o",
-			function()
-				if is_last_buf() then
-					return
-				end
-				require("oil").toggle_float()
-			end,
+			"<cmd>Oil --float<cr>",
 			desc = "Open oil",
 		},
 	},

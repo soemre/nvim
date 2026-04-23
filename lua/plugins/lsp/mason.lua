@@ -30,13 +30,14 @@ return {
 				"clangd", -- C, C++
 				"dcm", -- Dart
 				"typescript-language-server", -- JS, TS
+				"buf", -- Protobuf
 
 				-- Formatters
 				"stylua", -- Lua
 				"isort", -- Python
 				"black", -- Python
 				"alejandra", -- Nix
-				"prettier", -- HTML
+				"prettier", -- HTML, JSON
 				"clang-format", -- C, C++
 
 				-- Linters

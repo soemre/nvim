@@ -42,7 +42,9 @@ return {
 		dependencies = {
 			require("plugins.treesitter"),
 		},
-		opts = {},
+		opts = {
+			max_lines = 3,
+		},
 	},
 	{
 		"theHamsta/nvim-dap-virtual-text",
@@ -53,11 +55,18 @@ return {
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", require("plugins.telescope") },
-		-- event = "BufReadPost", -- Takes too much time
+		event = "BufReadPost",
 		keys = {
 			{ "<leader>t", ":TodoTelescope<CR>" },
 		},
-		opts = {},
+		opts = {
+			keywords = {
+				FEAT = { icon = "🚀", color = "feat" },
+			},
+			colors = {
+				feat = { "#f5c359" },
+			},
+		},
 	},
 	{
 		"rcarriga/nvim-dap-ui",
@@ -96,6 +105,16 @@ return {
 			"nvim-treesitter/nvim-treesitter",
 			"echasnovski/mini.icons",
 		},
+		opts = {},
+	},
+	{
+		"mvllow/modes.nvim",
+		event = "BufReadPost",
+		opts = {},
+	},
+	{
+		"sphamba/smear-cursor.nvim",
+		event = "BufReadPost",
 		opts = {},
 	},
 }

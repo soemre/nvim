@@ -29,8 +29,10 @@ return {
 				"clangd",
 				"--query-driver=/run/current-system/sw/bin/*gcc*",
 			},
+			filetypes = { "c", "cpp", "objc", "objcpp", "h", "hpp" },
 		})
 		cfg.dartls.setup({})
 		cfg.ts_ls.setup({})
+		cfg.buf_ls.setup({})
 	end,
 }

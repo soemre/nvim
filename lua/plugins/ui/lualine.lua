@@ -36,6 +36,12 @@ require("lualine").setup({
 		theme = bubbles_theme,
 		component_separators = "",
 		section_separators = { left = "", right = "" },
+		disabled_filetypes = {
+			"Avante",
+			"AvanteSelectedFiles",
+			"AvanteTodos",
+			"AvanteInput",
+		},
 	},
 	sections = {
 		lualine_a = { { "mode", right_padding = 2 } },

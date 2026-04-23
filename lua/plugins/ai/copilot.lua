@@ -1,6 +1,7 @@
 return {
 	"github/copilot.vim",
 	cmd = "Copilot",
+	event = "VeryLazy",
 	config = function()
 		vim.keymap.set("i", "<C-a-i>", 'copilot#Accept("\\<CR>")', {
 			expr = true,
